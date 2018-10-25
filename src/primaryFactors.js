@@ -5,10 +5,13 @@ Practise of primary factors calculation
 (function (exports) {
 
   exports.pfs = function (input) {
+    let result = [];
 
-    if(input === 2){
-      return [2];
+    for (let candidate = 2; candidate <= input; candidate++) {
+      for (; input % candidate == 0; input /= candidate) {
+        result.push(candidate);
+      }
     }
-    return [];
+    return result;
   };
 }((typeof window === 'undefined') ? module.exports : window));
