@@ -38,4 +38,7 @@ describe('primary factors tdd kata', function () {
   it('return [5,5] with input 25 ', function () {
     expect(pfs(25)).to.deep.equal([5,5])
   });
+  it('return [2,2,5,17,17,109] with input 2*2*5*17*17*109 ', function () {
+    expect(pfs(2*2*5*17*17*109)).to.deep.equal([2,2,5,17,17,109])
+  });
 });
