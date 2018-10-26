@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "coverage": "istanbul cover _mocha -- -R spec --timeout 5000 --recursive",
-    "coverage:check": "istanbul check-coverage",
+    "coverage": "cross-env NODE_ENV=test nyc mocha -R spec test/*-spec.js",
     "test": "mocha --compilers js:@babel/register -R spec test/*-spec.js",
     "watch": "npm test -- --watch"
   },
@@ -17,10 +16,24 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
     "chai": "^4.1.1",
+    "cross-env": "^5.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.5.0",
+    "nyc": "^13.1.0",
     "sinon": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  }
 }
