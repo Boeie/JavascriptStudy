@@ -15,10 +15,10 @@ Output:9870
 
 */
 
-(function (exports) {
 
-  exports.SimpleAdding = function (num) {
 
-    return num;
-  };
-}((typeof window === 'undefined') ? module.exports : window));
+export function SimpleAdding(num) {
+
+  return num;
+};
+
